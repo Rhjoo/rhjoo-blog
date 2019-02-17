@@ -8,6 +8,7 @@ import { rhythm } from "../utils/typography"
 
 class BlogIndex extends React.Component {
   render() {
+    console.log(this.props.data);
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
@@ -18,7 +19,7 @@ class BlogIndex extends React.Component {
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Bio />
+        
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
