@@ -5,7 +5,7 @@ module.exports = {
     description: `Tech Experimentor`,
     siteUrl: `https://rhjoo.io/`,
     social: {
-      twitter: null,
+      twitter: `rhjoo`,
     },
   },
   plugins: [
@@ -72,6 +72,12 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
       },
     },
   ],
