@@ -1,25 +1,14 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-
-import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
 
 export default class NavbarIcons extends Component {
   state = {
     icons: [
       {
         id: 1,
-        icon: <FaFacebook className="icon facebook-icon" />,
-        path: 'https://www.facebook.com'
-      },
-      {
-        id: 2,
-        icon: <FaTwitter className="icon twitter-icon" />,
-        path: 'https://www.twitter.com'
-      },
-      {
-        id: 3,
-        icon: <FaInstagram className="icon instagram-icon" />,
-        path: 'https://www.instagram.com'
+        icon: <FaGithub className="icon github-icon" />,
+        path: 'https://www.github.com/Rhjoo/'
       },
     ]
   }
@@ -33,7 +22,7 @@ export default class NavbarIcons extends Component {
                 href={item.path} 
                 key={item.id} 
                 target="_blank" 
-                rel="noopener nreferrer">
+                rel="noopener noreferrer">
                   {item.icon}
               </a>
             )
@@ -46,26 +35,18 @@ export default class NavbarIcons extends Component {
 
 const IconWrapper = styled.div`
   .icon {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     cursor: pointer;
-    ${styles.transFunction()};
+    text-align: center;
+    height: 70px;
   }
   .icon:hover {
-    color: ${styles.colors.mainYellow};
+    color: white;
+  }  
+  .github-icon {
+    color: grey;
   }
-  .facebook-icon {
-    color: #3b579d;
-  }
-  .twitter-icon {
-    color: #3ab7f0;
-  }
-  .instagram-icon {
-    color: #da5f53;
-  }
-  display: none;
-  @media (min-width: 768px) {
-    display: flex;
-    width: 10rem;
-    justify-content: space-around;
+  a {
+    box-shadow: none;
   }
 `

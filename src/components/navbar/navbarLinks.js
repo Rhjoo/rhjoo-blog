@@ -1,37 +1,25 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-// import { styles } from '../../../utils'
 
 export default class NavbarLinks extends Component {
   state = {
     links: [
       {
         id: 0,
-        path: '/',
-        name: 'home'
+        path: '/projects',
+        name: 'projects'
       },
       {
         id: 1,
         path: '/about',
         name: 'about'
       },
-      {
-        id: 2,
-        path: '/menu',
-        name: 'menu'
-      },
-      {
-        id: 3,
-        path: '/contact',
-        name: 'contact'
-      }
     ]
   }
   render() {
-    console.log(this.props.navbarOpen);
     return (
-      <LinkWrapper open={this.props.navbarOpen}>
+      <LinkWrapper >
         {
           this.state.links.map(item => {
             return (
@@ -49,34 +37,41 @@ export default class NavbarLinks extends Component {
 }
 
 const LinkWrapper = styled.ul`
+  display: flex;
+  padding: auto;
+  align-items: center;
+  height: 70px;
   li {
     list-style-type: none;
+    margin: auto;
   }
   .nav-link {
-    display: block;
+    display: inline;
     text-decoration: none;
     padding: 0.5rem 1rem 0.5rem 1rem;
     color: grey;
-    font-weight: 700;
+    font-weight: 400;
     text-transform: capitalize;
+    box-shadow: none;
+    border-radius: 3px;
     cursor: pointer;
-    
-    &:hover {
-      background: grey;
-      color: yellow;
-      padding: 0.5rem 1rem 0.5rem 1.3rem;
-    }
+  }  
+  .nav-link:hover {
+    background-color: grey;
+    color: white;
+    /* padding: 0.5rem 1rem 0.5rem 1.3rem; */
   }
-  height: ${props => (props.open? `152px` : `0px`)};
-  overflow: hidden;
   
-  @media (min-width: 768px) {
+  /* height: ${props => (props.open? `152px` : `0px`)};
+  overflow: hidden; */
+  
+  /* @media (min-width: 768px) {
     height: auto;
     display: flex;
     margin: 0 auto;
     .nav-link:hover {
-      background: white;
+      background: grey;
       padding: 0.5rem 1rem 0.5rem 1rem;
     }
-  }
+  } */
 `
