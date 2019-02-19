@@ -27,20 +27,19 @@ class Navbar extends React.Component {
 }
 
 const NavWrapper = styled.nav`
-  background-color: #424242;
-  display: flex;
-  align-items: center;
+  background-color: #404040;
   height: 70px;
   margin: 0;
-  font-family: sans-serif;
+  
   .nav-container {
     max-width: 850px;
     width: 90%;
     height: 70px;
-    margin: auto 10%;
-    padding: 0;
+    margin: auto;
+    padding: auto;
     display: flex;
     justify-content: space-between;
+    font-family: sans-serif;
   }
 `
 

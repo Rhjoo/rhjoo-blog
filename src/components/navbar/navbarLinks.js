@@ -57,21 +57,7 @@ const LinkWrapper = styled.ul`
     cursor: pointer;
   }  
   .nav-link:hover {
-    background-color: grey;
+    background-color: #464646;
     color: white;
-    /* padding: 0.5rem 1rem 0.5rem 1.3rem; */
   }
-  
-  /* height: ${props => (props.open? `152px` : `0px`)};
-  overflow: hidden; */
-  
-  /* @media (min-width: 768px) {
-    height: auto;
-    display: flex;
-    margin: 0 auto;
-    .nav-link:hover {
-      background: grey;
-      padding: 0.5rem 1rem 0.5rem 1rem;
-    }
-  } */
 `

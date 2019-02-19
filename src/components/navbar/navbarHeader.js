@@ -16,14 +16,14 @@ class NavbarHeader extends React.Component {
 }
 
 const HeaderWrapper = styled.div`
-  padding: 0;
+  padding: auto;
   display: flex;
   align-items: center;
   width: 50px;
   height: 70px;
   .logo {
     margin: auto;
-    width: 90%
+    width: 100%
     align-items: center;
   }
   .link {
