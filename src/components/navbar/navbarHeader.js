@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import logo from '../../../content/assets/gatsby-icon.png'
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
 import styled from 'styled-components'
 
 class NavbarHeader extends React.Component {
@@ -8,7 +8,8 @@ class NavbarHeader extends React.Component {
     return (
       <HeaderWrapper>
         <Link to="/" className="link">
-          <img src={logo} alt="company name" className="logo"/>
+          <FaChevronLeft style={{ paddingTop: 6 }} />RHJoo /<FaChevronRight style={{ paddingTop: 6 }}/>
+          {/* <img src={logo} alt="company name" className="logo"/> */}
         </Link> 
       </HeaderWrapper>
     )
@@ -16,18 +17,25 @@ class NavbarHeader extends React.Component {
 }
 
 const HeaderWrapper = styled.div`
-  padding: auto;
+  margin: auto 0;
+  padding: 4px;
   display: flex;
   align-items: center;
-  width: 50px;
-  height: 70px;
-  .logo {
+  width: auto;
+  height: 38px;
+  /* border-style: solid; */
+  border-color: grey;
+  border-width: 2px;
+  
+  /* .logo {
     margin: auto;
     width: 100%
     align-items: center;
-  }
+  } */
   .link {
     box-shadow: none;
+    font-size: 1.8rem;
+    color: grey;
   }
 `
 

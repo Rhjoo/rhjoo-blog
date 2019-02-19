@@ -9,9 +9,13 @@ Hello dear. This is my 4th post.
 > -Wayne Gretzky
 
 ```js
-class MyName extends React.Component {
+import React, { Component } from 'react'
+
+class App extends Component {
   render() {
-    console.log("My name is Ryan");
+    console.log("Ryan");
   }
 }
+
+export default App
 ```
