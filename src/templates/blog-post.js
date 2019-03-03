@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import styled from 'styled-components'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -18,7 +19,9 @@ class BlogPostTemplate extends React.Component {
         <p>
           {post.frontmatter.date}
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <ContentWrapper>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </ContentWrapper>
         <hr/>
         
 
@@ -43,6 +46,11 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
+const ContentWrapper = styled.div`
+  .language-js {
+    border-radius: 4px;
+  }
+`
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
