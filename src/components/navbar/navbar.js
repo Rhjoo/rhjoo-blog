@@ -1,7 +1,7 @@
 import React from 'react'
-import NavbarHeader from './NavbarHeader'
-import NavbarLinks from './NavbarLinks'
-import NavbarIcons from './NavbarIcons'
+import NavbarHeader from './navbarHeader'
+import NavbarLinks from './navbarLinks'
+import NavbarIcons from './navbarIcons'
 import styled from 'styled-components'
 
 class Navbar extends React.Component {
