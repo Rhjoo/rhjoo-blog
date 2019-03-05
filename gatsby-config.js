@@ -5,7 +5,7 @@ module.exports = {
     description: `Tech Experimentor`,
     siteUrl: `https://www.rhjoo.com/`,
     social: {
-      twitter: `rhjoo`,
+      twitter: `kylemathews`,
     },
   },
   plugins: [
