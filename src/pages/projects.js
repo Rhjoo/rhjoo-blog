@@ -13,7 +13,9 @@ class Projects extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <h2>Projects</h2>
-        
+        <p>
+          Coming soon...
+        </p>
       </Layout>
     )
   }
