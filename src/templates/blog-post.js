@@ -50,6 +50,9 @@ const ContentWrapper = styled.div`
   .language-js {
     border-radius: 4px;
   }
+  .language-html {
+    border-radius: 4px;
+  }
 `
 export default BlogPostTemplate
 
