@@ -128,7 +128,7 @@ export default App;
 ![first UI created](./something-to-do.png)
 As I have mentioned in an earlier post, React components are re-usable. One way to accomplish that is by separating each components in its own file. Let's create a new file called TodoForm.js and move the UI elements we just created into that file. Make sure to export and import TodoForm so both files are connected.
 ```js
-\\TodoForm.js
+//TodoForm.js
 import React from 'react';
 
 class TodoForm extends React.Component {
@@ -148,7 +148,7 @@ class TodoForm extends React.Component {
 export default TodoForm;
 ```
 ```js
-\\App.js
+//App.js
 import React, { Component } from 'react';
 import TodoForm from './TodoForm';
 
