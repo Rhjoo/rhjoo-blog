@@ -37,6 +37,7 @@ const Footer = styled.footer`
   margin: auto;
   width: 90%;
   max-width: 850px; 
+  font-family: sans-serif;
 `
 
 export default Layout

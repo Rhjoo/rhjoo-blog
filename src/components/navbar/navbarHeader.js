@@ -8,7 +8,7 @@ class NavbarHeader extends React.Component {
     return (
       <HeaderWrapper>
         <Link to="/" className="link">
-          <FaChevronLeft style={{ paddingTop: 6 }} />RHJoo /<FaChevronRight style={{ paddingTop: 6 }}/>
+          <FaChevronLeft style={{ paddingTop: 8, paddingBottom: 0 }} />RHJoo <span style={{ fontWeight: 'bold' }}>/</span><FaChevronRight style={{ paddingTop: 8, paddingBottom: 0 }}/>
           {/* <img src={logo} alt="company name" className="logo"/> */}
         </Link> 
       </HeaderWrapper>
@@ -36,6 +36,9 @@ const HeaderWrapper = styled.div`
     box-shadow: none;
     font-size: 1.8rem;
     color: grey;
+  }
+  .link:hover {
+    color: whitesmoke;
   }
 `
 
