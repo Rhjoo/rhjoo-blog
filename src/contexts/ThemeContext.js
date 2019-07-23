@@ -12,7 +12,7 @@ const defaultState = {
 
 const ThemeContextProvider = (props) => {
   const [themes, setTheme] = useState(() => {
-    if (windowGlobal.localStorage !== 'undefined') {
+    if (windowGlobal.localStorage.themes) {
       const localData = windowGlobal.localStorage.getItem('themes');
       return localData ? JSON.parse(localData) : defaultState;
     } else {
