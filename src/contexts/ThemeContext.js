@@ -10,8 +10,12 @@ const defaultState = {
 
 const ThemeContextProvider = (props) => {
   const [themes, setTheme] = useState(() => {
-    const localData = localStorage.getItem('themes');
-    return localData ? JSON.parse(localData) : defaultState;
+    if (localStorage === undefined) {
+      return defaultState
+    } else {
+      const localData = localStorage.getItem('themes');
+      return localData ? JSON.parse(localData) : defaultState;
+    }
   });
   const toggleTheme = () => {
     setTheme({ isLightTheme: !themes.isLightTheme, light: { color: 'white', font: 'black' }, dark: { color: '#505050', font: '#b3b9c5' } });
