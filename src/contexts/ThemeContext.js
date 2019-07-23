@@ -12,11 +12,11 @@ const defaultState = {
 
 const ThemeContextProvider = (props) => {
   const [themes, setTheme] = useState(() => {
-    if (localStorage === undefined) {
-      return defaultState
-    } else {
+    if (typeof window !== undefined) {
       const localData = localStorage.getItem('themes');
       return localData ? JSON.parse(localData) : defaultState;
+    } else {
+      return defaultState
     }
   });
   const toggleTheme = () => {
