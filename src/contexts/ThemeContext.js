@@ -2,7 +2,7 @@ import React, { useState, createContext, useEffect } from 'react'
 
 export const ThemeContext = createContext();
 
-/* global localStorage */
+const windowGlobal = typeof window !== 'undefined' && window;
 
 const defaultState = {
   isLightTheme: true,
@@ -13,7 +13,7 @@ const defaultState = {
 const ThemeContextProvider = (props) => {
   const [themes, setTheme] = useState(() => {
     if (typeof window !== undefined) {
-      const localData = localStorage.getItem('themes');
+      const localData = windowGlobal.localStorage.getItem('themes');
       return localData ? JSON.parse(localData) : defaultState;
     } else {
       return defaultState
@@ -23,7 +23,7 @@ const ThemeContextProvider = (props) => {
     setTheme({ isLightTheme: !themes.isLightTheme, light: { color: 'white', font: 'black' }, dark: { color: '#505050', font: '#b3b9c5' } });
   };
   useEffect(() => {
-    localStorage.setItem('themes', JSON.stringify(themes));
+    windowGlobal.localStorage.setItem('themes', JSON.stringify(themes));
   }, [themes]);
   return (  
     <ThemeContext.Provider value={{themes, toggleTheme}}>
