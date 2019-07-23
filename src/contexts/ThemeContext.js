@@ -2,7 +2,7 @@ import React, { useState, createContext, useEffect } from 'react'
 
 export const ThemeContext = createContext();
 
-const windowGlobal = typeof window !== 'undefined' && window;
+const windowGlobal = typeof window !== undefined && window;
 
 const defaultState = {
   isLightTheme: true,
@@ -12,7 +12,7 @@ const defaultState = {
 
 const ThemeContextProvider = (props) => {
   const [themes, setTheme] = useState(() => {
-    if (typeof window !== undefined) {
+    if (windowGlobal.localStorage !== undefined) {
       const localData = windowGlobal.localStorage.getItem('themes');
       return localData ? JSON.parse(localData) : defaultState;
     } else {
