@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ThemeContextProvider, { ThemeContext } from "../contexts/ThemeContext"
 
 class BlogIndex extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges
 
     return (
+      <ThemeContextProvider>
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title="All posts"
@@ -20,18 +22,25 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3 style={{ fontFamily: `sans-serif`, marginBottom: 0 }}>
-                <Link to={node.fields.slug} style={{ boxShadow: `none`, color: `black` }}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
+            <ThemeContext.Consumer>{(context) => {
+              const { isLightTheme, light, dark } = context.themes;
+              const theme = isLightTheme ? light : dark;  
+              return (
+                <div key={node.fields.slug}>
+                  <h3 style={{ fontFamily: `sans-serif`, marginBottom: 0 }}>
+                    <Link to={node.fields.slug} style={{ boxShadow: `none`, color: theme.font }}>
+                      {title}
+                    </Link>
+                  </h3>
+                  <small>{node.frontmatter.date}</small>
+                  <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                </div>
+              )}}
+            </ThemeContext.Consumer>
           )
         })}
       </Layout>
+      </ThemeContextProvider>
     )
   }
 }
