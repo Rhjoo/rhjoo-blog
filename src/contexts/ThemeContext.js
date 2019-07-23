@@ -2,6 +2,8 @@ import React, { useState, createContext, useEffect } from 'react'
 
 export const ThemeContext = createContext();
 
+/* global localStorage */
+
 const defaultState = {
   isLightTheme: true,
   light: { color: 'white', font: 'black' },
