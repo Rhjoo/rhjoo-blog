@@ -23,7 +23,7 @@ class BlogIndex extends React.Component {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <ThemeContext.Consumer>{(context) => {
-              const { isLightTheme, light, dark } = context.themes;
+              const { isLightTheme, light, dark } = context;
               const theme = isLightTheme ? light : dark;  
               return (
                 <div key={node.fields.slug}>
