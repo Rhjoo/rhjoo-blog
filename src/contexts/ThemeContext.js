@@ -1,4 +1,4 @@
-import React, { useState, createContext, useEffect } from 'react'
+import React, { createContext } from 'react'
 
 // const windowGlobal = typeof window !== 'undefined' && window;
 
@@ -52,7 +52,6 @@ class ThemeContextProvider extends React.Component {
 
   toggleTheme = () => {
     this.setState({ isLightTheme: !this.state.isLightTheme });
-    // localStorage.setItem('theme', JSON.stringify(this.state));
   }
   
   render() {
