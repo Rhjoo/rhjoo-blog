@@ -9,7 +9,7 @@ const defaultState = {
   dark: { color: '#505050', font: '#b3b9c5' }
 };
 
-export const ThemeContext = createContext(defaultState);
+export const ThemeContext = createContext();
 
 // const ThemeContextProvider = (props) => {
 //   const [themes, setTheme] = useState(() => {
@@ -37,7 +37,7 @@ class ThemeContextProvider extends React.Component {
   state = defaultState;
 
   componentDidMount() {
-    const localData = localStorage.getItem('themes');
+    const localData = localStorage.getItem('theme');
     if (localData) {
       this.setState(JSON.parse(localData));
     }
@@ -46,12 +46,13 @@ class ThemeContextProvider extends React.Component {
   componentDidUpdate(prevState) {
     const { isLightTheme } = this.state
     if (prevState.isLightTheme !== isLightTheme) {
-      localStorage.setItem('theme', JSON.stringify(this.state))
+      localStorage.setItem('theme', JSON.stringify(this.state));
     }
   }
 
   toggleTheme = () => {
     this.setState({ isLightTheme: !this.state.isLightTheme });
+    // localStorage.setItem('theme', JSON.stringify(this.state));
   }
   
   render() {
