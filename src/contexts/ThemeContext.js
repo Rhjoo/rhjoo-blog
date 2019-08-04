@@ -43,7 +43,6 @@ class ThemeContextProvider extends React.Component {
     }
   } 
 
-<<<<<<< HEAD
   // componentDidUpdate(prevState) {
   //   const { isLightTheme } = this.state
   //   if (prevState.isLightTheme !== isLightTheme) {
@@ -54,8 +53,6 @@ class ThemeContextProvider extends React.Component {
   toggleTheme = () => {
     this.setState({ isLightTheme: !this.state.isLightTheme });
     localStorage.setItem('theme', JSON.stringify(this.state));
-=======
-  componentDidUpdate(prevState) {
     const { isLightTheme } = this.state
     if (prevState.isLightTheme !== isLightTheme) {
       localStorage.setItem('theme', JSON.stringify(this.state))
@@ -64,7 +61,6 @@ class ThemeContextProvider extends React.Component {
 
   toggleTheme = () => {
     this.setState({ isLightTheme: !this.state.isLightTheme });
->>>>>>> parent of 3b82f95... 10th try: fixed themes to theme
   }
   
   render() {
