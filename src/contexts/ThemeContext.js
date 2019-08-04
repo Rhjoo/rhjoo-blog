@@ -43,15 +43,16 @@ class ThemeContextProvider extends React.Component {
     }
   } 
 
-  componentDidUpdate(prevState) {
-    const { isLightTheme } = this.state
-    if (prevState.isLightTheme !== isLightTheme) {
-      localStorage.setItem('theme', JSON.stringify(this.state));
-    }
-  }
+  // componentDidUpdate(prevState) {
+  //   const { isLightTheme } = this.state
+  //   if (prevState.isLightTheme !== isLightTheme) {
+  //     localStorage.setItem('theme', JSON.stringify(this.state));
+  //   }
+  // }
 
   toggleTheme = () => {
     this.setState({ isLightTheme: !this.state.isLightTheme });
+    localStorage.setItem('theme', JSON.stringify(this.state));
   }
   
   render() {
