@@ -9,7 +9,7 @@ const defaultState = {
   dark: { color: '#505050', font: '#b3b9c5' }
 };
 
-export const ThemeContext = createContext();
+export const ThemeContext = createContext(defaultState);
 
 // const ThemeContextProvider = (props) => {
 //   const [themes, setTheme] = useState(() => {
@@ -37,12 +37,13 @@ class ThemeContextProvider extends React.Component {
   state = defaultState;
 
   componentDidMount() {
-    const localData = localStorage.getItem('theme');
+    const localData = localStorage.getItem('themes');
     if (localData) {
       this.setState(JSON.parse(localData));
     }
   } 
 
+<<<<<<< HEAD
   // componentDidUpdate(prevState) {
   //   const { isLightTheme } = this.state
   //   if (prevState.isLightTheme !== isLightTheme) {
@@ -53,6 +54,17 @@ class ThemeContextProvider extends React.Component {
   toggleTheme = () => {
     this.setState({ isLightTheme: !this.state.isLightTheme });
     localStorage.setItem('theme', JSON.stringify(this.state));
+=======
+  componentDidUpdate(prevState) {
+    const { isLightTheme } = this.state
+    if (prevState.isLightTheme !== isLightTheme) {
+      localStorage.setItem('theme', JSON.stringify(this.state))
+    }
+  }
+
+  toggleTheme = () => {
+    this.setState({ isLightTheme: !this.state.isLightTheme });
+>>>>>>> parent of 3b82f95... 10th try: fixed themes to theme
   }
   
   render() {
