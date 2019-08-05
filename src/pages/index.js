@@ -20,21 +20,15 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <ThemeContext.Consumer>{(context) => {
-              const { isLightTheme, light, dark } = context;
-              const theme = isLightTheme ? light : dark;  
-              return (
-                <div key={node.fields.slug}>
-                  <h3 style={{ fontFamily: `sans-serif`, marginBottom: 0 }}>
-                    <Link to={node.fields.slug} style={{ boxShadow: `none`, color: theme.font }}>
-                      {title}
-                    </Link>
-                  </h3>
-                  <small>{node.frontmatter.date}</small>
-                  <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-                </div>
-              )}}
-            </ThemeContext.Consumer>
+            <div key={node.fields.slug}>
+              <h3 style={{ fontFamily: `sans-serif`, marginBottom: 0 }}>
+                <Link to={node.fields.slug} style={{ boxShadow: `none`, color: 'black' }}>
+                  {title}
+                </Link>
+              </h3>
+              <small>{node.frontmatter.date}</small>
+              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+            </div>
           )
         })}
       </Layout>

@@ -6,8 +6,7 @@ import styled from "styled-components"
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
-    const { isLightTheme, light, dark } = this.context;
-    const theme = isLightTheme ? light : dark;  
+    
     return (
       <div>
         <Navbar />
