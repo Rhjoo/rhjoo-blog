@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ThemeContextProvider, { ThemeContext } from "../contexts/ThemeContext"
 
 class BlogIndex extends React.Component {
   render() {
@@ -12,7 +11,6 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <ThemeContextProvider>
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title="All posts"
@@ -40,7 +38,6 @@ class BlogIndex extends React.Component {
           )
         })}
       </Layout>
-      </ThemeContextProvider>
     )
   }
 }

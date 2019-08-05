@@ -1,17 +1,15 @@
-import React, { useContext } from "react"
+import React from "react"
 import Navbar from "./navbar/navbar"
 import styled from "styled-components"
-import { ThemeContext } from "../contexts/ThemeContext"
 
 
 class Layout extends React.Component {
-  static contextType = ThemeContext;
   render() {
     const { location, title, children } = this.props
     const { isLightTheme, light, dark } = this.context;
     const theme = isLightTheme ? light : dark;  
     return (
-      <div style={{background: theme.color, color: theme.font}}>
+      <div>
         <Navbar />
         <Main>{children}</Main>
         <Footer>

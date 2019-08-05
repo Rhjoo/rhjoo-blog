@@ -2,7 +2,6 @@ import React from 'react'
 import NavbarHeader from './navbarHeader'
 import NavbarLinks from './navbarLinks'
 import NavbarIcons from './navbarIcons'
-import ThemeToggle from './themeToggle';
 import styled from 'styled-components'
 
 class Navbar extends React.Component {
@@ -20,7 +19,6 @@ class Navbar extends React.Component {
         <div className="nav-container">
           <NavbarHeader />
           <NavbarLinks />
-          <ThemeToggle />
           <NavbarIcons />
         </div>
       </NavWrapper>

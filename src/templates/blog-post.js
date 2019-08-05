@@ -4,8 +4,6 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from 'styled-components'
-import ThemeContextProvider from "../contexts/ThemeContext"
-
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -15,7 +13,6 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <ThemeContextProvider>
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <h2 style={{ fontFamily: `sans-serif`, marginBottom: 0 }}>{post.frontmatter.title}</h2>
@@ -45,7 +42,6 @@ class BlogPostTemplate extends React.Component {
           </li>
         </ul>
       </Layout>
-      </ThemeContextProvider>
     )
   }
 }
