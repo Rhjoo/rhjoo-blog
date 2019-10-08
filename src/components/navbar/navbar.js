@@ -27,7 +27,7 @@ class Navbar extends React.Component {
 }
 
 const NavWrapper = styled.nav`
-  background-color: #404040;
+  background-color: #1f364d;
   height: 70px;
   margin: 0;
   

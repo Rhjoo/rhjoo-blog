@@ -17,7 +17,7 @@ class Layout extends React.Component {
           <a href="https://github.com/gatsbyjs/gatsby-starter-blog" 
              target="_blank" 
              rel="noopener noreferrer" 
-             style={{ boxShadow: `none`, color: `black` }}
+             style={{ boxShadow: `none`, color: `#FFFFFF` }}
           >
             Gatsby
           </a>
@@ -32,12 +32,14 @@ const Main = styled.div`
   width: 90%;
   max-width: 850px; 
   font-family: sans-serif;
+  background-color: #0d2439;
 `
 const Footer = styled.footer`
   margin: auto;
   width: 90%;
   max-width: 850px; 
   font-family: sans-serif;
+  color: #ffffff;
 `
 
 export default Layout

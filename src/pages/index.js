@@ -11,27 +11,29 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3 style={{ fontFamily: `sans-serif`, marginBottom: 0 }}>
-                <Link to={node.fields.slug} style={{ boxShadow: `none`, color: 'black' }}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
-      </Layout>
+      <div style={{ backgroundColor: `#0d2439`}}>
+        <Layout location={this.props.location} title={siteTitle}>
+          <SEO
+            title="All posts"
+            keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          />
+          
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <div key={node.fields.slug} style={{ color: '#9cb3c9' }}>
+                <h3 style={{ fontFamily: `sans-serif`, marginBottom: 0 }}>
+                  <Link to={node.fields.slug} style={{ boxShadow: `none`, color: '#FFFFFF' }}>
+                    {title}
+                  </Link>
+                </h3>
+                <small style={{ color: '#FFFFFF' }}>{node.frontmatter.date}</small>
+                <p dangerouslySetInnerHTML={{ __html: node.excerpt }}/>
+              </div>
+            )
+          })}
+        </Layout>
+      </div>
     )
   }
 }

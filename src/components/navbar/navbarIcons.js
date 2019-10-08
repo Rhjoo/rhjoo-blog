@@ -41,10 +41,10 @@ const IconWrapper = styled.div`
     height: 70px;
   }
   .icon:hover {
-    color: white;
+    color: #9CB3C9;
   }  
   .github-icon {
-    color: grey;
+    color: #FFFFFF;
   }
   a {
     box-shadow: none;

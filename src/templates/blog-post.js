@@ -13,35 +13,37 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <h2 style={{ fontFamily: `sans-serif`, marginBottom: 0 }}>{post.frontmatter.title}</h2>
-        <p>
-          {post.frontmatter.date}
-        </p>
-        <ContentWrapper>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        </ContentWrapper>
-        <hr/>
-        
+      <div style={{ backgroundColor: `#0d2439`, color: '#9cb3c9'}}>
+        <Layout location={this.props.location} title={siteTitle}>
+          <SEO title={post.frontmatter.title} description={post.excerpt} />
+          <h2 style={{ fontFamily: `sans-serif`, marginBottom: 0, color: '#FFFFFF' }}>{post.frontmatter.title}</h2>
+          <p style={{ color: '#FFFFFF' }}>
+            {post.frontmatter.date}
+          </p>
+          <ContentWrapper>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          </ContentWrapper>
+          <hr/>
+          
 
-        <ul style={{ display: `flex`, justifyContent: `space-between` }}>
-          <li style={{ listStyleType: `none` }}>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li style={{ listStyleType: `none` }}>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </Layout>
+          <ul style={{ display: `flex`, justifyContent: `space-between` }}>
+            <li style={{ listStyleType: `none`}}>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev" style={{ color: `white` }}>
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li style={{ listStyleType: `none` }}>
+              {next && (
+                <Link to={next.fields.slug} rel="next" style={{ color: `white` }}>
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
+        </Layout>
+      </div>
     )
   }
 }
@@ -52,6 +54,9 @@ const ContentWrapper = styled.div`
   }
   .language-html {
     border-radius: 4px;
+  }
+  a {
+    color: white;
   }
 `
 export default BlogPostTemplate

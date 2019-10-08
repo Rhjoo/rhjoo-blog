@@ -49,7 +49,7 @@ const LinkWrapper = styled.ul`
     display: inline;
     text-decoration: none;
     padding: 0.5rem 1rem 0.5rem 1rem;
-    color: grey;
+    color: #FFFFFF;
     font-weight: 400;
     text-transform: capitalize;
     box-shadow: none;
@@ -57,7 +57,7 @@ const LinkWrapper = styled.ul`
     cursor: pointer;
   }  
   .nav-link:hover {
-    background-color: #464646;
-    color: white;
+    /* background-color: #9CB3C9; */
+    color: #9CB3C9;
   }
 `

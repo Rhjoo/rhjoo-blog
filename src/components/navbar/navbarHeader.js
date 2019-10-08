@@ -35,10 +35,10 @@ const HeaderWrapper = styled.div`
   .link {
     box-shadow: none;
     font-size: 1.8rem;
-    color: grey;
+    color: #FFFFFF;
   }
   .link:hover {
-    color: whitesmoke;
+    color: #9CB3C9;
   }
 `
 
