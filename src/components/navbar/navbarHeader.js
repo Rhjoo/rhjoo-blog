@@ -8,7 +8,12 @@ class NavbarHeader extends React.Component {
     return (
       <HeaderWrapper>
         <Link to="/" className="link">
-          <FaChevronLeft style={{ paddingTop: 8, paddingBottom: 0 }} />RHJoo <span style={{ fontWeight: 'bold' }}>/</span><FaChevronRight style={{ paddingTop: 8, paddingBottom: 0 }}/>
+          {/* {/* <FaChevronLeft style={{ paddingTop: 8, paddingBottom: 0 }} /> */}
+          {/* <div style={{ borderColor: `#FFF`, borderWidth: `2px`, borderStyle: `solid`, padding: `-2px 5px` }}> */}
+            RHJoo
+          {/* </div> */}
+          {/* <span style={{ fontWeight: 'bold' }}>/</span> */}
+          {/* <FaChevronRight style={{ paddingTop: 8, paddingBottom: 0 }}/> */} 
           {/* <img src={logo} alt="company name" className="logo"/> */}
         </Link> 
       </HeaderWrapper>
