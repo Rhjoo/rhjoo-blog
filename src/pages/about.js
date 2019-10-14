@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 class About extends React.Component {
   render() {
     return (
-      <div style={{ backgroundColor: `#0d2439`, color: '#9cb3c9'}}>
+      <div style={{ backgroundColor: `#0d2439`, color: '#9cb3c9', height: `100vh` }}>
         <Layout>
           <SEO
             title="About Me"
